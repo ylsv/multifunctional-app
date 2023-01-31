@@ -29,7 +29,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             // одно из важнейших полей. тут конфигурируем лоудеры (обрабатывают файлы, которые выходят за рамки js)
             // любые файлы как png, css, scss тут обрабатываются
-            rules: buildLoaders()
+            rules: buildLoaders(options)
         },
         resolve: buildResolvers(),
         // сорс-мап для нормального отслеживания мест происхождения ошибок в коде

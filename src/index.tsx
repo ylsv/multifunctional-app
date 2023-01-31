@@ -1,9 +1,7 @@
 import {render} from "react-dom";
-import {Conuter} from "./components/Conuter";
+import App from "./App";
 
 render(
-    <div>
-        <Conuter />
-    </div>,
+    <App />,
     document.getElementById('root')
 )

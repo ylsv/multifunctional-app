@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
 import webpack from "webpack";
 import {BuildOptions} from "./types/config";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
@@ -12,5 +12,12 @@ export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstan
         }),
         // плагин для отслеживания времени сборки
         new webpack.ProgressPlugin(),
+        // This plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
+        new MiniCssExtractPlugin({
+            // названия файлов и где они будут располагаться
+            filename: 'css/[name].[contenthash:8].css',
+            // для асинхронных файлов
+            chunkFilename: 'css/[name].[contenthash:8].css'
+        })
     ]
 }
