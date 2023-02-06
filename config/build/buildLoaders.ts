@@ -4,6 +4,22 @@ import {BuildOptions} from "./types/config";
 
 export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
+    // обрабатываем импорты svg
+    const svgLoader = {
+        test: /\.svg$/i,
+        use: ['@svgr/webpack'],
+    }
+
+    // обрабатываем импорты изображений других типов (также можно сюда добавить шрифты - woff ...)
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -35,6 +51,8 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
     // здесь порядок лоудеров имеет значение
     return [
+        fileLoader,
+        svgLoader,
         // лоудер для ts - обрабатывает ts и tsx
         typescriptLoader,
         // лоудер для css, sass
