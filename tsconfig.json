@@ -26,7 +26,12 @@
   // нужно для нормальных импортов https://webpack.js.org/configuration/configuration-languages/
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
     }
-  }
+  },
+  // для работы jest-dom
+  "include": [
+    "./config/jest/setupTests.ts",
+    "src"
+  ]
 }
