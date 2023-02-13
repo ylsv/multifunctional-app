@@ -1,0 +1,20 @@
+.PageError {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  font: var(--font-l);
+  color: var(--primary-color);
+
+  p {
+    color: red;
+  }
+
+  button {
+    padding: 8px;
+    border-radius: 12px;
+  }
+}
