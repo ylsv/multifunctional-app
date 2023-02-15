@@ -39,8 +39,8 @@ module.exports = {
     'object-curly-spacing': ['error', 'never'],
     'no-underscore-dangle': 'off',
     'semi': ['error', 'never'],
-    'i18next/no-literal-string': ['error', {markupOnly: true, ignoreAttribute: ['data-testid']}],
-    'max-len': ['error', {ignoreComments: true, code: 100}]
+    'i18next/no-literal-string': ['error', {markupOnly: true, ignoreAttribute: ['data-testid', 'to']}],
+    'max-len': ['error', {ignoreComments: true, code: 120}]
   },
   globals: {
     __IS_DEV__: true,

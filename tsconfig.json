@@ -32,6 +32,7 @@
   // для работы jest-dom
   "include": [
     "./config/jest/setupTests.ts",
-    "src"
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
   ]
 }

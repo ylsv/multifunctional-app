@@ -4,7 +4,8 @@ import {ButtonHTMLAttributes, FC} from 'react'
 
 // типы кнопок (можно будет добавлять новые) стили для них по классам в файле стилей
 export enum ThemeButton {
-  CLEAR = 'clear'
+  CLEAR = 'clear',
+  OUTLINE = 'outline'
 }
 
 // добавляем пропсы html кнопки, чтобы были все онклики и прочее
