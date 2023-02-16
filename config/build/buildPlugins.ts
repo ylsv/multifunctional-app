@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 
 export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     // плагин для обработки html файлов, без него html не будет собираться, также он подключает скрипты в html
     new HtmlWebpackPlugin({
       // путь исходной директории (входная точка приложения), это файл будет использоваться как шаблон для сборки
@@ -24,10 +24,15 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
     new webpack.DefinePlugin({
       __IS__DEV__: JSON.stringify(isDev),
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
+  ]
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin())
+    plugins.push( new BundleAnalyzerPlugin({
       // чтобы не открывался автоматически каждый раз при сборке
       openAnalyzer: false,
-    }),
-  ]
+    }))
+  }
+
+  return plugins
 }
