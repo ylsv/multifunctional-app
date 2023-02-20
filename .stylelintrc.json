@@ -4,6 +4,8 @@
     "selector-class-pattern": null,
     "custom-property-empty-line-before": null,
     "declaration-empty-line-before": null,
-    "value-keyword-case": null
+    "value-keyword-case": null,
+    "scss/double-slash-comment-whitespace-inside": null,
+    "scss/double-slash-comment-empty-line-before": null
   }
 }

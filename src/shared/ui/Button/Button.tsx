@@ -5,6 +5,7 @@ import {ButtonHTMLAttributes, FC} from 'react'
 // типы кнопок (можно будет добавлять новые) стили для них по классам в файле стилей
 export enum ButtonTheme {
   CLEAR = 'clear',
+  CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',

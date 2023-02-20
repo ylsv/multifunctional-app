@@ -13,9 +13,15 @@
   --font-line-xl: 40px;
   --font-xl: var(--font-line-xl) / var(--font-line-xl) var(--font-family-main);
 
-  // Размеры
+  // sizes
   --navbar-height: 50px;
 
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
+
+  // z-indexes
+  --modal-z-index: 10;
+
+  // colors
+  --overlay-color: rgb(0 0 0 / 50%);
 }
