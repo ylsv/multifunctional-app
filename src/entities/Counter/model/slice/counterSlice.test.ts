@@ -1,7 +1,7 @@
 import {counterActions, counterReducer} from './counterSlice'
 import {CounterSchema} from '../types/counterSchema'
 
-describe('counterSlice.test', () => {
+describe('userSlice.test', () => {
   test('should increment value', () => {
     // здесь не нужен deep-partial, тк мы тестируем не весь стейт, а конкретный редьюсер, куда передается конкретный участок стейта
     const state: CounterSchema = {value: 10}

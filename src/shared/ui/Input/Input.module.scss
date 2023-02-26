@@ -1,0 +1,10 @@
+.input {
+  padding: 8px;
+  outline-color: var(--primary-color);
+  color: var(--primary-color);
+
+  &::placeholder {
+    color: var(--primary-color);
+    opacity: 0.4;
+  }
+}

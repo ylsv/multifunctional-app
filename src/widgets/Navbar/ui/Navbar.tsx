@@ -4,6 +4,7 @@ import cls from './Navbar.module.scss'
 import {Modal} from 'shared/ui/Modal/Modal'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
+import {LoginModal} from 'features/AuthByUsername'
 
 // тип для дополнительных пропсов, которые можно докидывать из вне Navbar
 interface NavbarProps {
@@ -15,8 +16,12 @@ export const Navbar = ({className}: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false)
 
   // обернули в useCallback, чтобы при передачи функции в качестве пропсов она не пересоздавалась и не приводила к лишним перерисовкам
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal(prev => !prev)
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false)
+  },[])
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModal(true)
   },[])
 
   return (
@@ -24,11 +29,14 @@ export const Navbar = ({className}: NavbarProps) => {
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
         className={cls.links}
-        onClick={onToggleModal}
+        onClick={onShowModal}
       >
         {t('Войти')}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onToggleModal}>111111111</Modal>
+      <LoginModal
+        isOpen={isAuthModal}
+        onClose={onCloseModal}
+      />
     </div>
   )
 }

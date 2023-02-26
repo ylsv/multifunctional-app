@@ -4,5 +4,8 @@
   "Сокращенный язык": "En",
   "Страница не найдена": "Page Not Found",
   "Произошла непредвиденная ошибка": "Unexpected Error Occurred",
-  "Обновить страницу": "Reload Page"
+  "Обновить страницу": "Reload Page",
+  "Войти": "Login",
+  "логин": "login",
+  "пароль": "password"
 }
