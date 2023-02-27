@@ -1,5 +1,5 @@
 /*
- * For a detailed explanation regarding each configuration property and type check, visit:
+ * For a detailed explanation regarding each configuration property and types check, visit:
  * https://jestjs.io/docs/configuration
  */
 
