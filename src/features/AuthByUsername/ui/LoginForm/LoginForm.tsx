@@ -1,5 +1,5 @@
 import {memo, useCallback, useEffect} from 'react'
-import {useDispatch, useSelector, useStore} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './LoginForm.module.scss'
 import {useTranslation} from 'react-i18next'
@@ -10,19 +10,21 @@ import {getLoginState} from '../../model/selectors/getLoginState/getLoginState'
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername'
 import {Text, TextTheme} from 'shared/ui/Text/Text'
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 export interface LoginFormProps {
   className?: string
   isOpen?: boolean
+  onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer
 }
 
-const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
+const LoginForm = memo(({className, isOpen, onSuccess}: LoginFormProps) => {
   const {t} = useTranslation()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const {username, password, error, isLoading} = useSelector(getLoginState) || {}
 
@@ -34,9 +36,10 @@ const LoginForm = memo(({className, isOpen}: LoginFormProps) => {
     (value: string) => dispatch(loginActions.setPassword(value)),
     [dispatch])
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({username, password}))
-  }, [dispatch, password, username])
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({username, password}))
+    if (result.meta.requestStatus === 'fulfilled') onSuccess()
+  }, [dispatch, password, username, onSuccess])
 
   const handleSubmit = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Enter') onLoginClick()

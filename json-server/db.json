@@ -46,6 +46,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Jack",
+    "lastname": "Daniels",
+    "age": "35",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTunv0iu__DPNYrBZ-_GeVVGXh0x3Pe9YIlk-FvoQcibw&s"
   }
 }

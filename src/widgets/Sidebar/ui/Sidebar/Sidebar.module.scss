@@ -32,19 +32,6 @@
   gap: 12px;
 }
 
-.link {
-  padding-left: 10px;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
@@ -59,13 +46,5 @@
 
   .items {
     gap: 20px;
-  }
-
-  .item {
-    justify-content: center;
-  }
-
-  .link {
-    display: none;
   }
 }
