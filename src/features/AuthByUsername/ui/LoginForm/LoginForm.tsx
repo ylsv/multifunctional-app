@@ -26,7 +26,7 @@ const LoginForm = memo(({className, isOpen, onSuccess}: LoginFormProps) => {
   const {t} = useTranslation()
   const dispatch = useAppDispatch()
 
-  const {username, password, error, isLoading} = useSelector(getLoginState) || {}
+  const {username = '', password = '', error = '', isLoading = false} = useSelector(getLoginState) || {}
 
   const onChangeUsername = useCallback(
     (value: string) => dispatch(loginActions.setUsername(value)),
