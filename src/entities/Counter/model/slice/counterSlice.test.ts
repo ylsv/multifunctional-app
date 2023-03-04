@@ -16,7 +16,7 @@ describe('userSlice.test', () => {
   })
 
   test('should work with empty state', () => {
-    const state: CounterSchema = undefined
+    const state = undefined
     expect(counterReducer(state, counterActions.increment()))
       .toEqual({value: 1})
   })
