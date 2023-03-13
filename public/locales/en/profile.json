@@ -12,5 +12,10 @@
   "Имя пользователя": "Username",
   "Введите ссылку на аватар": "Enter profile picture link",
   "Валюта": "Currency",
-  "Страна": "Country"
+  "Страна": "Country",
+  "Неверный возраст": "Incorrect age",
+  "Не указаны имя или фамилия": "Name or surname empty",
+  "Данные не указаны": "No data",
+  "Некорректный  регион": "Incorrect region",
+  "Серверная ошибка": "Server error"
 }
