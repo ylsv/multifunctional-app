@@ -1,9 +1,10 @@
 import webpack from 'webpack'
 import {BuildOptions} from './types/config'
 import {buildCssLoader} from './loaders/buildCssLoader'
+import {buildBabelLoader} from './loaders/buildBabelLoader'
 
-export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
-
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+  const {isDev} = options
   // обрабатываем импорты svg
   const svgLoader = {
     test: /\.svg$/i,
@@ -20,6 +21,8 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     ],
   }
 
+  const babelLoader = buildBabelLoader(options)
+
   const cssLoader = buildCssLoader(isDev)
 
   // если не истользуем тайпскрипт, нужен babel-loader. но нам пока не нужен
@@ -33,6 +36,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
   return [
     fileLoader,
     svgLoader,
+    babelLoader,
     // лоудер для ts - обрабатывает ts и tsx
     typescriptLoader,
     // лоудер для css, sass
