@@ -20,7 +20,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
       // If any reducers have been removed, clean up their state first
       if (keysToRemove.length > 0) {
         state = {...state}
-        for (let key of keysToRemove) {
+        for (const key of keysToRemove) {
           delete state[key]
         }
         keysToRemove = []

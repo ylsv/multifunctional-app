@@ -46,6 +46,10 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     "react/display-name": "off", // Checks effect dependencies
     "no-undef": "off",
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }],
   },
   globals: {
     __IS_DEV__: true,
