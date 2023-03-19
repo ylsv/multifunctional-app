@@ -23,6 +23,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       path: paths.build,
       // подчищаем файлы после каждой сборки
       clean: true,
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: {
