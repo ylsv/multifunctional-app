@@ -1,5 +1,8 @@
 {
+  "ArticleCodeBlockComponent": "ArticleCodeBlockComponent",
   "ArticleDetails": "ArticleDetails",
+  "ArticleImageBlockComponent": "ArticleImageBlockComponent",
+  "ArticleTextBlockComponent": "ArticleTextBlockComponent",
   "Error": "Error",
   "article details page": "article details page",
   "articles page": "articles page",

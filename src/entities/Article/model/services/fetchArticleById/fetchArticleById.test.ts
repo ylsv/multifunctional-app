@@ -1,20 +1,8 @@
-import React from 'react'
-import {ComponentMeta, ComponentStory} from '@storybook/react'
-import ArticleDetailsPage from './ArticleDetailsPage'
-import {ArticleBlockType, ArticleType} from 'entities/Article/model/types/article'
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import {fetchArticleById} from './fetchArticleById'
+import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
+import {ArticleBlockType, ArticleType} from '../../types/article'
 
-export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  argTypes: {
-    backgroundColor: {control: 'color'},
-  },
-} as ComponentMeta<typeof ArticleDetailsPage>
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />
-
-const mockArticle = {
+const data = {
   "id": "1",
   "title": "Javascript news",
   "subtitle": "Что нового в JS за 2022 год?",
@@ -86,12 +74,24 @@ const mockArticle = {
   ]
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: mockArticle,
-  },
-})]
+describe('fetchArticleById.test', () => {
+  test('successful fetching', async () => {
+    const thunk = new TestAsyncThunk(fetchArticleById)
+    // здесь мы мокаем ответ от сервера на вызов метода
+    thunk.api.get.mockReturnValue(Promise.resolve({data}))
 
+    const result = await thunk.callThunk('1')
 
+    expect(thunk.api.get).toHaveBeenCalled()
+    expect(result.meta.requestStatus).toBe('fulfilled')
+    expect(result.payload).toEqual(data)
+  })
+
+  test('error response', async () => {
+    const thunk = new TestAsyncThunk(fetchArticleById)
+    thunk.api.get.mockReturnValue(Promise.resolve({status: 403}))
+
+    const result = await thunk.callThunk('1')
+    expect(result.meta.requestStatus).toBe('rejected')
+  })
+})
