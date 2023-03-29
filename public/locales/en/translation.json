@@ -10,5 +10,6 @@
   "логин": "login",
   "пароль": "password",
   "Форма авторизации": "Authorization Form",
-  "неверный логин или пароль": "wrong username or password"
+  "неверный логин или пароль": "wrong username or password",
+  "Комментарии отсутствуют": "No comments available here",
 }

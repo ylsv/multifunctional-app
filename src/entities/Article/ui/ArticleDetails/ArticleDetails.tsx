@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next'
 import {DynamicModuleLoader, ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import {memo, useCallback, useEffect} from 'react'
+import {memo, useCallback} from 'react'
 import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById'
 import {useSelector} from 'react-redux'
 import {
@@ -22,6 +22,7 @@ import {ArticleBlock, ArticleBlockType} from '../../model/types/article'
 import {ArticleCodeBlockComponent} from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import {ArticleImageBlockComponent} from 'entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent'
 import {ArticleTextBlockComponent} from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent'
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 interface ArticleDetailsProps {
   className?: string
@@ -63,9 +64,9 @@ export const ArticleDetails = memo(({className, id}: ArticleDetailsProps) => {
     }
   }, [])
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') dispatch(fetchArticleById(id))
-  }, [dispatch, id])
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id))
+  })
 
   let content
 
