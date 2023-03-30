@@ -117,6 +117,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Test test",
+      "id": "cN3s8Yv"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Hello there",
+      "id": "1Ag99ve"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "One more test",
+      "id": "enHD9uI"
     }
   ],
   "users": [
@@ -135,14 +153,28 @@
       "avatar": "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/133/5/133-5-101P/The-Dude-Bruno-Morphet-Poster.jpg"
     }
   ],
-  "profile": {
-    "firstname": "Jack",
-    "lastname": "Daniels",
-    "age": "35",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "test1",
-    "avatar": "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/133/5/133-5-101P/The-Dude-Bruno-Morphet-Poster.jpg"
-  }
+  "profiles": [
+    {
+      "id": "1",
+      "firstname": "Jack",
+      "lastname": "Daniels",
+      "age": "35",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "test1",
+      "avatar": "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/133/5/133-5-101P/The-Dude-Bruno-Morphet-Poster.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Jack",
+      "lastname": "Dickens",
+      "age": "16",
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "test2",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9YqyaoUL1En5dMepGMJfVQdaVxJk44nUMVRP7_C0llQ&s"
+    }
+  ]
 }

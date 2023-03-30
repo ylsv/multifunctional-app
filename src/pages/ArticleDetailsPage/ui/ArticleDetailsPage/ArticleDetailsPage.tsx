@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticleDetailsPage.module.scss'
 import {useTranslation} from 'react-i18next'
-import {memo} from 'react'
+import {memo, useCallback} from 'react'
 import {ArticleDetails} from 'entities/Article'
 import {useParams} from 'react-router-dom'
 import {CommentList} from 'entities/Comment'
@@ -13,8 +13,10 @@ import {getArticleCommentsIsLoading} from '../../model/selectors/comments'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {
   fetchCommentsByArticleId
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import {AddCommentForm} from 'features/AddCommentForm'
+import {addCommentForArticle} from '../../model/services/addCommentForArticle/addCommentForArticle'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -32,6 +34,10 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
   const commentsAreLoading = useSelector(getArticleCommentsIsLoading)
   const dispatch = useAppDispatch()
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text))
+  }, [dispatch])
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
   })
@@ -48,7 +54,8 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetails id={id}/>
-        <Text title={t('Комментарии')} className={cls.commentTitle} />
+        <Text title={t('Комментарии')} className={cls.commentTitle}/>
+        <AddCommentForm onSendComment={onSendComment}/>
         <CommentList
           comments={comments}
           isLoading={commentsAreLoading}
