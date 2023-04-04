@@ -1,0 +1,12 @@
+.ArticleList {
+  display: flex;
+  gap: 30px;
+}
+
+.BIG {
+  flex-direction: column;
+}
+
+.SMALL {
+  flex-wrap: wrap;
+}

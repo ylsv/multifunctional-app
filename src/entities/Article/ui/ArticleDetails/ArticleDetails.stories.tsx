@@ -24,6 +24,10 @@ const mockArticle = {
   "type": [
     ArticleType.IT
   ],
+  "user": {
+    "id": "1",
+    "username": "Mr. Richard",
+  },
   "blocks": [
     {
       "id": "1",
