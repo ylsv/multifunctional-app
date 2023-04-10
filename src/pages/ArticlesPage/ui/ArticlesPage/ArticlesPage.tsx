@@ -15,6 +15,7 @@ import {
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
 import {Page} from 'shared/ui/Page/Page'
+import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlesPageProps {
   className?: string
@@ -43,12 +44,11 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
   }, [curPage, dispatch, hasMore, isLoading])
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(fetchArticlesList({page: 1}))
+    dispatch(initArticlesPage())
   })
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [className])}>
         <ArticleViewSelector view={view} onViewClick={onChangeView}/>
         <ArticleList
