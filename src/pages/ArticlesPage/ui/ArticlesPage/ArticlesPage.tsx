@@ -14,7 +14,7 @@ import {
   getArticlesPageNumber,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import {Page} from 'shared/ui/Page/Page'
+import {Page} from 'widgets/Page/Page'
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlesPageProps {
