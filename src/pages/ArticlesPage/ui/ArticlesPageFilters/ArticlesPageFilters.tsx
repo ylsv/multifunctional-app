@@ -1,4 +1,4 @@
-import {memo, useCallback, useMemo} from 'react'
+import {memo, useCallback} from 'react'
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './ArticlesPageFilters.module.scss'
 import {
@@ -11,8 +11,10 @@ import {
 import {articlesPageActions} from 'pages/ArticlesPage/model/slice/articlesPageSlice'
 import {useSelector} from 'react-redux'
 import {
-  getArticlesPageOrder, getArticlesPageSearch,
-  getArticlesPageSort, getArticlesPageType,
+  getArticlesPageOrder,
+  getArticlesPageSearch,
+  getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -22,7 +24,6 @@ import {Input} from 'shared/ui/Input/Input'
 import {SortOrder} from 'shared/types'
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList'
 import {useDebounce} from 'shared/lib/hooks/useDebounce/useDebounce'
-import {TabItem, Tabs} from 'shared/ui/Tabs/Tabs'
 import {ArticleType} from 'entities/Article/model/types/article'
 
 interface ArticlesPageFiltersProps {
