@@ -8,7 +8,7 @@ import {
   ArticleView,
   ArticleViewSelector
 } from 'entities/Article'
-import {articlesPageActions} from 'pages/ArticlesPage/model/slice/articlesPageSlice'
+import {articlesPageActions} from '../../model/slice/articlesPageSlice'
 import {useSelector} from 'react-redux'
 import {
   getArticlesPageOrder,

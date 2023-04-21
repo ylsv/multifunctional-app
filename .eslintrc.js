@@ -21,6 +21,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'ylsv-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -51,6 +52,7 @@ module.exports = {
       "destructuring": "any",
       "ignoreReadBeforeAssign": false
     }],
+    "ylsv-plugin/path-checker": 'error',
   },
   globals: {
     __IS_DEV__: true,

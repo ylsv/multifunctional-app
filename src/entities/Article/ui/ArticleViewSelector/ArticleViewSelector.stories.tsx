@@ -1,7 +1,7 @@
 import React from 'react'
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 import {ArticleViewSelector} from './ArticleViewSelector'
-import {ArticleView} from 'entities/Article'
+import {ArticleView} from '../../model/types/article'
 
 export default {
   title: 'entities/ArticleViewSelector',
