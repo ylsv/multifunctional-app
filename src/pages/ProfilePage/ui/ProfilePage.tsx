@@ -22,6 +22,7 @@ import {useTranslation} from 'react-i18next'
 import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {useParams} from 'react-router-dom'
 import {Page} from 'widgets/Page/Page'
+import {VStack} from 'shared/ui/Stack'
 
 
 const reducers: ReducersList = {

@@ -9,6 +9,7 @@ import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {Currency, CurrencySelect} from 'entities/Currency'
 import {Country} from 'entities/Country/model/types/country'
 import {CountrySelect} from 'entities/Country'
+import {VStack} from 'shared/ui/Stack'
 
 interface ProfileCardProps {
   className?: string
@@ -67,7 +68,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={classNames(cls.ProfileCard, {[cls.editing]: !readonly}, [className])}>
-      <div className={cls.data}>
+      <VStack gap="4">
         {data?.avatar && (
           <div className={cls.avatarWrapper}>
             <Avatar src={data.avatar}/>
@@ -128,7 +129,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           onChange={onChangeCountry}
           readonly={readonly}
         />
-      </div>
+      </VStack>
     </div>
   )
 }
