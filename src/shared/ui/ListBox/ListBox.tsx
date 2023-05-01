@@ -1,17 +1,16 @@
-import {ReactNode, useState} from 'react'
+import {ReactNode} from 'react'
 import {Listbox as HListBox} from '@headlessui/react'
 import cls from './ListBox.module.scss'
 import {classNames} from 'shared/lib/classNames/classNames'
 import {Button} from '../Button/Button'
 import {HStack} from '../Stack'
+import {DropdownDirection} from 'shared/types/ui'
 
 export interface ListBoxItem {
   value: string
   content: ReactNode
   disabled?: boolean
 }
-
-type DropdownDirection = 'top' | 'bottom'
 
 export interface ListBoxProps {
   items?: ListBoxItem[]
@@ -25,7 +24,7 @@ export interface ListBoxProps {
 }
 
 export function ListBox(props: ListBoxProps) {
-  const {className, items, value, defaultValue, onChange, readonly, direction = 'bottom', label} = props
+  const {className, items, value, defaultValue, onChange, readonly, direction = 'bottomRight', label} = props
 
   return (
     <HStack gap="8">
