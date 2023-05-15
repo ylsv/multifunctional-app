@@ -68,7 +68,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={classNames(cls.ProfileCard, {[cls.editing]: !readonly}, [className])}>
-      <VStack gap="4">
+      <VStack gap="4" max>
         {data?.avatar && (
           <div className={cls.avatarWrapper}>
             <Avatar src={data.avatar}/>

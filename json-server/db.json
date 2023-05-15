@@ -574,6 +574,12 @@
       "userId": "2",
       "text": "test",
       "id": "koQ4yQC"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "134",
+      "id": "67kmebX"
     }
   ],
   "users": [
@@ -595,9 +601,9 @@
   "profiles": [
     {
       "id": "1",
-      "firstname": "Jack",
+      "firstname": "John",
       "lastname": "Daniels",
-      "age": "35",
+      "age": "33",
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
