@@ -10,7 +10,7 @@ import {useTranslation} from 'react-i18next'
 
 interface ArticleListProps {
   className?: string
-  articles?: Article[]
+  articles: Article[]
   isLoading?: boolean
   view?: ArticleView
   target?: HTMLAttributeAnchorTarget
@@ -32,7 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     )
   }
 
-  if (!isLoading && !articles?.length) {
+  if (!isLoading && !articles.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         <Text title={t('Статьи не найдены')}/>
