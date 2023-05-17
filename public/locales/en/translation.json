@@ -15,5 +15,8 @@
   "Введите текст комментария": "Enter comment text",
   "Отправить": "Send",
   "Создать статью": "Create new article",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Панель администратора": "Admin Panel",
+  "Админка": "Admin Panel",
+  "У вас нет доступа к этой странице": "You don't have access to this page"
 }
