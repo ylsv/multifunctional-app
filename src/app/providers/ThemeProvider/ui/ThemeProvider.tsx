@@ -1,4 +1,4 @@
-import React, {FC, useMemo, useState} from 'react'
+import React, {FC, ReactNode, useMemo, useState} from 'react'
 import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from '../lib/ThemeContext'
 
 // берем из ls и приводим тип строки к типу theme
@@ -6,9 +6,10 @@ const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || T
 
 interface ThemeProviderProps {
   initialTheme?: Theme
+  children?: ReactNode
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({children, initialTheme}) => {
+const ThemeProvider = ({children, initialTheme}: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
   document.body.className = theme
   // используем useMemo, чтобы не создавался каждый раз новый объект, а использовался один и тот же

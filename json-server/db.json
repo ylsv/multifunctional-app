@@ -580,6 +580,12 @@
       "userId": "1",
       "text": "134",
       "id": "67kmebX"
+    },
+    {
+      "articleId": "7",
+      "userId": "3",
+      "text": "hi there yo!",
+      "id": "Eg7TSei"
     }
   ],
   "users": [
@@ -587,21 +593,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://www.oneeducation.org.uk/wp-content/uploads/2018/08/Admin-Secretarial-and-PA-Diploma-Level-3.jpg"
     },
     {
       "id": "2",
       "username": "dick",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/133/5/133-5-101P/The-Dude-Bruno-Morphet-Poster.jpg"
     },
     {
       "id": "3",
       "username": "john",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     }
   ],
