@@ -4,6 +4,9 @@ import {loginReducer} from './model/slice/loginSlice'
 
 export {
   LoginModal,
-  LoginSchema,
   loginReducer,
+}
+
+export type {
+  LoginSchema,
 }

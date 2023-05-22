@@ -2,11 +2,11 @@
   "compilerOptions": {
     // директория, куда производится сборка (в нашем случае не важна, т.к. собирает вебпак)
     "outDir": "./dist/",
-    // подствечивает все места, где не указан тип
+    // подсвечивает все места, где не указан тип
     "noImplicitAny": true,
     // тип модулей
     "module": "ESNext",
-    // в какую варсию js компилируем - es5 для лучшей поддержки
+    // в какую версию js компилируем - es5 для лучшей поддержки
     "target": "es5",
     "jsx": "react-jsx",
     // компилятор будет обрабатывать не только ts, но и js файлы
@@ -22,7 +22,8 @@
     // как с обычными пакетами с помощью import (require() module.exports) = common js
     "esModuleInterop": true,
     // позволяет использовать обычные импорты, без * (например не надо писать import * as React from 'react')
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
   },
   // нужно для нормальных импортов https://webpack.js.org/configuration/configuration-languages/
   "ts-node": {

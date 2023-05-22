@@ -639,6 +639,17 @@
       "city": "Minsk",
       "username": "test2",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9YqyaoUL1En5dMepGMJfVQdaVxJk44nUMVRP7_C0llQ&s"
+    },
+    {
+      "id": "3",
+      "firstname": "John",
+      "lastname": "Johnson",
+      "age": "33",
+      "currency": "EUR",
+      "country": "Armenia",
+      "city": "Yerevan",
+      "username": "test3",
+      "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     }
   ]
 }

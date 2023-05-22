@@ -5,6 +5,9 @@ import {ArticleDetailsPageSchema} from './model/types'
 
 export {
   ArticleDetailsPageAsync as ArticleDetailsPage,
+}
+
+export type {
   ArticleDetailsCommentsSchema,
   ArticleDetailsRecommendationsSchema,
   ArticleDetailsPageSchema,

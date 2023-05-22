@@ -5,9 +5,12 @@ import type {StateSchema, ReduxStoreWithManager, ThunkExtraArg, ThunkConfig} fro
 export {
   StoreProvider,
   createReduxStore,
-  AppDispatch,
   StateSchema,
   ReduxStoreWithManager,
   ThunkExtraArg,
   ThunkConfig,
+}
+
+export type {
+  AppDispatch,
 }
