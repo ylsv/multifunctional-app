@@ -21,24 +21,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     ],
   }
 
-  const babelLoader = buildBabelLoader(options)
+  const codeBabelLoader = buildBabelLoader({...options, isTSX: false})
+  const tsxCodeBabelLoader = buildBabelLoader({...options, isTSX: true})
 
   const cssLoader = buildCssLoader(isDev)
-
-  // если не истользуем тайпскрипт, нужен babel-loader. но нам пока не нужен
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  }
 
   // здесь порядок лоудеров имеет значение
   return [
     fileLoader,
     svgLoader,
-    babelLoader,
-    // лоудер для ts - обрабатывает ts и tsx
-    typescriptLoader,
+    codeBabelLoader,
+    tsxCodeBabelLoader,
     // лоудер для css, sass
     cssLoader,
   ]
