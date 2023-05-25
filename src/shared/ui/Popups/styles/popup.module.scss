@@ -1,23 +1,18 @@
-.ListBox {
+.popup {
   position: relative;
+  cursor: pointer;
 }
 
 .trigger {
   background: none;
-  border: none;
   outline-color: transparent;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }
 
-.options {
-  background: var(--listbox-bg);
-  position: absolute;
-  z-index: 100;
-  border-radius: 12px;
-  box-shadow: 4px 4px 8px var(--listbox-bg);
-  min-width: 100%;
-
+.directionWrapper {
   &.topRight {
     bottom: 100%;
     left: 0;
@@ -39,12 +34,9 @@
   }
 }
 
-.item {
-  padding: 10px 12px;
-}
-
 .active {
   background: var(--secondary-color);
+  border-radius: 8px;
 }
 
 .selected {

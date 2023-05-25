@@ -651,5 +651,39 @@
       "username": "test3",
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло событие 1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло событие 2",
+      "userId": "1",
+      "href": "https://doka.guide"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло событие 3",
+      "userId": "1",
+      "href": "https://developer.mozilla.org/"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло событие 4",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло событие 5",
+      "userId": "2"
+    }
   ]
 }

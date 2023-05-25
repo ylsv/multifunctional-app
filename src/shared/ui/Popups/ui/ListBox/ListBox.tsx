@@ -2,9 +2,10 @@ import {ReactNode} from 'react'
 import {Listbox as HListBox} from '@headlessui/react'
 import cls from './ListBox.module.scss'
 import {classNames} from 'shared/lib/classNames/classNames'
-import {Button} from '../Button/Button'
-import {HStack} from '../Stack'
+import {Button} from '../../../Button/Button'
+import {HStack} from '../../../Stack'
 import {DropdownDirection} from 'shared/types/ui'
+import popupCls from '../../styles/popup.module.scss'
 
 export interface ListBoxItem {
   value: string
@@ -30,18 +31,18 @@ export function ListBox(props: ListBoxProps) {
     <HStack gap="8">
       {label && <span>{label}</span>}
       <HListBox
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(popupCls.popup, {}, [className])}
         as="div"
         value={value}
         onChange={onChange}
         disabled={readonly}
       >
-        <HListBox.Button className={cls.trigger} disabled={readonly}>
+        <HListBox.Button className={popupCls.trigger} disabled={readonly}>
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>
         </HListBox.Button>
-        <HListBox.Options className={classNames(cls.options, {}, [cls[direction]])}>
+        <HListBox.Options className={classNames(cls.options, {}, [popupCls.directionWrapper, popupCls[direction]])}>
           {items?.map((item) => (
             <HListBox.Option
               key={item.value}
@@ -55,9 +56,9 @@ export function ListBox(props: ListBoxProps) {
                   className={classNames(
                     cls.item,
                     {
-                      [cls.active]: active,
-                      [cls.disabled]: item.disabled,
-                      [cls.selected]: selected,
+                      [popupCls.active]: active,
+                      [popupCls.disabled]: item.disabled,
+                      [popupCls.selected]: selected,
                     }
                   )}
                 >
