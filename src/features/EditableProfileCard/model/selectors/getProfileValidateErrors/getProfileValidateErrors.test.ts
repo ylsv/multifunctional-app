@@ -1,5 +1,5 @@
 import {getProfileValidateErrors} from './getProfileValidateErrors'
-import {StateSchema} from 'app/providers/StoreProvider'
+import {StateSchema} from '@/app/providers/StoreProvider'
 import {ValidateProfileError} from '../../consts/consts'
 
 describe('getProfileValidateErrors', () => {

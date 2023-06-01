@@ -15,6 +15,7 @@ export default ({config}: { config: webpack.Configuration }) => {
   }
   config.resolve!.modules!.push(paths.src)
   config.resolve!.extensions!.push('.ts', '.tsx')
+  config.resolve!.alias = {'@': paths.src}
   // находим в конфиге вебпака по регулярке правило, обрабатывающее svg, и исключаем обработку этого правила для сторибука
   const rules = config.module!.rules as RuleSetRule[]
   config.module!.rules = rules.map((rule) => {

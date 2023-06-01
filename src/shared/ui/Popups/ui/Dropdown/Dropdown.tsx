@@ -1,8 +1,8 @@
 import {Fragment, ReactNode} from 'react'
-import {classNames} from 'shared/lib/classNames/classNames'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './Dropdown.module.scss'
 import {Menu} from '@headlessui/react'
-import {DropdownDirection} from 'shared/types/ui'
+import {DropdownDirection} from '@/shared/types/ui'
 import {AppLink} from '../../../AppLink/AppLink'
 import popupCls from '../../styles/popup.module.scss'
 

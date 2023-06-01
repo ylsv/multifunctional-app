@@ -11,7 +11,9 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     modules: [options.paths.src, 'node_modules'],
     // главные файлы для каждого модуля
     mainFiles: ['index'],
-    // знак, который будет ставиться перед абсолютным импортом (в нашем случае ничего не указываем)
-    alias: {},
+    // знак, который будет ставиться перед абсолютным импортом
+    alias: {
+      '@': options.paths.src,
+    },
   }
 }

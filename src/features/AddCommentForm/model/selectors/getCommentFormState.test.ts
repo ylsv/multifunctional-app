@@ -1,5 +1,5 @@
 import {getCommentFormText} from './getCommentFormState'
-import {StateSchema} from 'app/providers/StoreProvider'
+import {StateSchema} from '@/app/providers/StoreProvider'
 
 describe('getCommentFormText', () => {
   test('should return text', () => {

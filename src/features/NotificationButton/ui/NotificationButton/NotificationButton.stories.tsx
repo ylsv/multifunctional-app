@@ -1,7 +1,7 @@
 import React from 'react'
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 import {NotificationButton} from './NotificationButton'
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator'
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'features/NotificationButton',

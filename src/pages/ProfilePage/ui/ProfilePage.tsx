@@ -1,6 +1,6 @@
-import {classNames} from 'shared/lib/classNames/classNames'
-import {Page} from 'widgets/Page/Page'
-import {EditableProfileCard} from 'features/EditableProfileCard'
+import {classNames} from '@/shared/lib/classNames/classNames'
+import {Page} from '@/widgets/Page/Page'
+import {EditableProfileCard} from '@/features/EditableProfileCard'
 import {useParams} from 'react-router-dom'
 
 

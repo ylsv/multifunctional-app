@@ -1,10 +1,10 @@
 import {CombinedState, configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
-import {$api} from 'shared/api/api'
+import {$api} from '@/shared/api/api'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
-import {userReducer} from 'entities/User'
+import {userReducer} from '@/entities/User'
 import {createReducerManager} from './reducerManager'
-import {uiReducer} from 'features/UI'
-import {rtkApi} from 'shared/api/rtkApi'
+import {uiReducer} from '@/features/UI'
+import {rtkApi} from '@/shared/api/rtkApi'
 
 export function createReduxStore(
   initialState?: StateSchema,

@@ -1,5 +1,5 @@
 import {getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading} from './getArticleDetails'
-import {StateSchema} from 'app/providers/StoreProvider'
+import {StateSchema} from '@/app/providers/StoreProvider'
 
 describe('getArticleDetails', () => {
   test('should return article data object', () => {

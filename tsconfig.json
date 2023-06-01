@@ -16,7 +16,7 @@
     // для абсолютного импорта
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     // esModuleInterop позволяет работать с пакетами, которые используют common js
     // как с обычными пакетами с помощью import (require() module.exports) = common js
