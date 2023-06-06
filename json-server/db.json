@@ -685,5 +685,34 @@
       "description": "Произошло событие 5",
       "userId": "2"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Все понравилось",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 1,
+      "feedback": "Ничего не понравилось",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "feedback": "Удивительно, восхитительно",
+      "id": "Xxixpli"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 3,
+      "id": "EpXLpjI"
+    }
   ]
 }

@@ -15,7 +15,7 @@ interface PopoverProps {
 export const Popover = ({className, trigger, direction = 'bottomRight', children}: PopoverProps) => {
   return (
     <HPopover className={classNames(popupCls.popup, {}, [className])}>
-      <HPopover.Button className={popupCls.trigger}>
+      <HPopover.Button className={popupCls.trigger} as="div">
         {trigger}
       </HPopover.Button>
       <HPopover.Panel className={classNames(cls.panel, {}, [popupCls.directionWrapper, popupCls[direction]])}>

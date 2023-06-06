@@ -1,4 +1,5 @@
 import {memo, useCallback, useState} from 'react'
+import cls from './RatingCard.module.scss'
 import {classNames} from '@/shared/lib/classNames/classNames'
 import {HStack, VStack} from '@/shared/ui/Stack'
 import {Text} from '@/shared/ui/Text/Text'
@@ -9,6 +10,7 @@ import {useTranslation} from 'react-i18next'
 import {Button, ButtonTheme} from '@/shared/ui/Button/Button'
 import {BrowserView, MobileView} from 'react-device-detect'
 import {Drawer} from '@/shared/ui/Drawer/Drawer'
+import {Card} from '@/shared/ui/Card/Card'
 
 interface RatingCardProps {
   className?: string
@@ -17,6 +19,7 @@ interface RatingCardProps {
   hasFeedback?: boolean
   onCancel?: (starsCount: number) => void
   onAccept?: (starsCount: number, feedback?: string) => void
+  rate?: number
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -27,10 +30,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
     hasFeedback,
     onCancel,
     onAccept,
+    rate = 0
   } = props
   const {t} = useTranslation()
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [starsCount, setStarsCount] = useState(0)
+  const [starsCount, setStarsCount] = useState(rate)
   const [feedback, setFeedback] = useState('')
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -68,10 +72,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
   )
 
   return (
-    <div className={classNames('', {}, [className])}>
-      <VStack align="center" gap="8">
-        <Text title={title}/>
-        <StarRating size={40} onSelect={onSelectStars}/>
+    <Card className={classNames(cls.RatingCard, {}, [className])} max>
+      <VStack align="center" gap="8" max>
+        <Text title={starsCount ? t('Спасибо за оценку') : title}/>
+        <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount}/>
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
@@ -83,7 +87,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
           {modalContent}
         </Drawer>
       </MobileView>
-
-    </div>
+    </Card>
   )
 })
