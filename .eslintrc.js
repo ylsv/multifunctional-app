@@ -52,7 +52,7 @@ module.exports = {
       "destructuring": "any",
       "ignoreReadBeforeAssign": false
     }],
-    "ylsv-plugin/path-checker": 'error',
+    "ylsv-plugin/path-checker": ["error", {alias: "@"}],
   },
   globals: {
     __IS_DEV__: true,
