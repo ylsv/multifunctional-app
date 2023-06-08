@@ -53,6 +53,7 @@ module.exports = {
       "ignoreReadBeforeAssign": false
     }],
     "ylsv-plugin/path-checker": ["error", {alias: "@"}],
+    "ylsv-plugin/public-api-checker": ["error", {alias: "@"}],
   },
   globals: {
     __IS_DEV__: true,

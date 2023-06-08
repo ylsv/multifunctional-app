@@ -1,5 +1,5 @@
 import {ArticleDetails} from './ui/ArticleDetails/ArticleDetails'
-import type {Article} from './model/types/article'
+import {Article, ArticleBlockType} from './model/types/article'
 import {ArticleSortField, ArticleView, ArticleType} from './model/types/article'
 import type {ArticleDetailsSchema} from './model/types/articleDetailsSchema'
 import {getArticleDetailsData} from './model/selectors/getArticleDetails'
@@ -10,7 +10,6 @@ import {ArticleTypeTabs} from './ui/ArticleTypeTabs/ArticleTypeTabs'
 
 export {
   ArticleDetails,
-  Article,
   ArticleView,
   ArticleDetailsSchema,
   getArticleDetailsData,
@@ -19,5 +18,10 @@ export {
   ArticleSortField,
   ArticleSortSelector,
   ArticleType,
+  ArticleBlockType,
   ArticleTypeTabs,
+}
+
+export type {
+  Article,
 }
