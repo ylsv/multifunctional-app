@@ -57,6 +57,10 @@ module.exports = {
       alias: "@",
       testFiles: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
     }],
+    "ylsv-plugin/layer-imports": ["error", {
+      alias: "@",
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+    }],
   },
   globals: {
     __IS_DEV__: true,
