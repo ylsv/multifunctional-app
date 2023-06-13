@@ -53,7 +53,10 @@ module.exports = {
       "ignoreReadBeforeAssign": false
     }],
     "ylsv-plugin/path-checker": ["error", {alias: "@"}],
-    "ylsv-plugin/public-api-checker": ["error", {alias: "@"}],
+    "ylsv-plugin/public-api-checker": ["error", {
+      alias: "@",
+      testFiles: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+    }],
   },
   globals: {
     __IS_DEV__: true,
