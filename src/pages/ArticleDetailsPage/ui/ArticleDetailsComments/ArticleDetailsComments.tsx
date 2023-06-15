@@ -1,6 +1,6 @@
 import {memo, useCallback} from 'react'
 import {classNames} from '@/shared/lib/classNames/classNames'
-import {Text, TextSize} from '@/shared/ui/Text/Text'
+import {Text, TextSize} from '@/shared/ui/Text'
 import {AddCommentForm} from '@/features/AddCommentForm'
 import {CommentList} from '@/entities/Comment'
 import {useSelector} from 'react-redux'

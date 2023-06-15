@@ -8,7 +8,7 @@ import {
   getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
 import {useTranslation} from 'react-i18next'
-import {Text} from '@/shared/ui/Text/Text'
+import {Text} from '@/shared/ui/Text'
 
 interface ArticleInfiniteListProps {
   className?: string

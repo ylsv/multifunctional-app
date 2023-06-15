@@ -1,6 +1,6 @@
 import React, {memo, useCallback} from 'react'
 import {classNames} from '@/shared/lib/classNames/classNames'
-import {Avatar} from '@/shared/ui/Avatar/Avatar'
+import {Avatar} from '@/shared/ui/Avatar'
 import {Dropdown} from '@/shared/ui/Popups'
 import {useTranslation} from 'react-i18next'
 import {useDispatch, useSelector} from 'react-redux'
