@@ -22,6 +22,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'ylsv-plugin',
+    'unused-imports',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -29,6 +30,7 @@ module.exports = {
     'indent': [2, 2],
     'react/jsx-filename-extension': [2, {extensions: ['.js', '.jsx', '.tsx']}],
     'import/no-unresolved': 'off',
+    "unused-imports/no-unused-imports": "error",
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
     'react/require-default-props': 'off',
