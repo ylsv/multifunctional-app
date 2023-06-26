@@ -11,7 +11,7 @@ import {Avatar} from '@/shared/ui/Avatar'
 import {useTranslation} from 'react-i18next'
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import {AppLink} from '@/shared/ui/AppLink'
-import {RoutePath} from '@/shared/const/router'
+import {getRouteArticleDetails} from '@/shared/const/router'
 
 interface ArticleListItemProps {
   className?: string
@@ -46,7 +46,7 @@ export const ArticleListItem = memo(({className, article, view, target}: Article
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
           )}
           <div className={cls.footer}>
-            <AppLink to={RoutePath.article_details + article.id} target={target}>
+            <AppLink to={getRouteArticleDetails(article.id)} target={target}>
               <Button theme={ButtonTheme.OUTLINE}>
                 {t('Читать далее...')}
               </Button>
@@ -60,7 +60,7 @@ export const ArticleListItem = memo(({className, article, view, target}: Article
 
   return (
     <AppLink
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       target={target}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >

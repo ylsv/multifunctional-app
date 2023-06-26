@@ -11,7 +11,7 @@ import {AppLink, AppLinkTheme} from '@/shared/ui/AppLink'
 import {HStack} from '@/shared/ui/Stack'
 import {NotificationButton} from '@/features/NotificationButton'
 import {AvatarDropdown} from '@/features/AvatarDropdown'
-import {RoutePath} from '@/shared/const/router'
+import {getRouteArticleCreate} from '@/shared/const/router'
 
 // тип для дополнительных пропсов, которые можно докидывать из вне Navbar
 interface NavbarProps {
@@ -41,7 +41,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
           theme={TextTheme.INVERTED}
         />
         <AppLink
-          to={RoutePath.article_create}
+          to={getRouteArticleCreate()}
           theme={AppLinkTheme.SECONDARY}
           className={cls.createBtn}
         >
