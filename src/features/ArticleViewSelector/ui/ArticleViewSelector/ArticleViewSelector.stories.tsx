@@ -1,10 +1,11 @@
 import React from 'react'
-import {ComponentMeta, ComponentStory} from '@storybook/react'
+import {ComponentStory, ComponentMeta} from '@storybook/react'
+
 import {ArticleViewSelector} from './ArticleViewSelector'
-import {ArticleView} from '../../model/types/article'
+import {ArticleView} from '@/entities/Article'
 
 export default {
-  title: 'entities/ArticleViewSelector',
+  title: 'features/ArticleViewSelector',
   component: ArticleViewSelector,
   argTypes: {
     backgroundColor: {control: 'color'},
@@ -17,5 +18,3 @@ export const Normal = Template.bind({})
 Normal.args = {
   view: ArticleView.BIG
 }
-
-
