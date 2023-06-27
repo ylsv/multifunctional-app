@@ -33,7 +33,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     },
     resolve: buildResolvers(options),
     // сорс-мап для нормального отслеживания мест происхождения ошибок в коде
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   }
 }

@@ -17,23 +17,11 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
     }),
     // плагин для отслеживания времени сборки
     new webpack.ProgressPlugin(),
-    // This plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
-    new MiniCssExtractPlugin({
-      // названия файлов и где они будут располагаться
-      filename: 'css/[name].[contenthash:8].css',
-      // для асинхронных файлов
-      chunkFilename: 'css/[name].[contenthash:8].css'
-    }),
     // позволяет прокидывать в приложение глобальные переменные (например, нам нужно isDev)
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
-    }),
-    new CopyPlugin({
-      patterns: [
-        {from: paths.locales, to: paths.buildLocales},
-      ],
     }),
   ]
 
@@ -57,6 +45,25 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
         mode: 'write-references',
       },
     }))
+  }
+
+  if (!isDev) {
+    plugins.push(
+      // This plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
+      new MiniCssExtractPlugin({
+        // названия файлов и где они будут располагаться
+        filename: 'css/[name].[contenthash:8].css',
+        // для асинхронных файлов
+        chunkFilename: 'css/[name].[contenthash:8].css'
+      }),
+    )
+    plugins.push(
+      new CopyPlugin({
+        patterns: [
+          {from: paths.locales, to: paths.buildLocales},
+        ],
+      }),
+    )
   }
 
   return plugins
