@@ -12,6 +12,8 @@ import {useTranslation} from 'react-i18next'
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import {AppLink} from '@/shared/ui/AppLink'
 import {getRouteArticleDetails} from '@/shared/const/router'
+import {AppImage} from '@/shared/ui/AppImage'
+import {Skeleton} from '@/shared/ui/Skeleton'
 
 interface ArticleListItemProps {
   className?: string
@@ -41,7 +43,13 @@ export const ArticleListItem = memo(({className, article, view, target}: Article
           </div>
           <Text text={article.title} className={cls.title}/>
           {types}
-          <img src={article.img} className={cls.img} alt={article.title}/>
+          <AppImage
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+            fallBack={<Skeleton width="100%" height={250} />}
+            errorFallBack={<div>{t('изображение не загрузилось')}</div>}
+          />
           {textBlock && (
             <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
           )}
@@ -66,7 +74,13 @@ export const ArticleListItem = memo(({className, article, view, target}: Article
     >
       <Card>
         <div className={cls.imageWrapper}>
-          <img src={article.img} className={cls.img} alt={article.title}/>
+          <AppImage
+            src={article.img}
+            className={cls.img}
+            alt={article.title}
+            fallBack={<Skeleton width={200} height={200} />}
+            errorFallBack={<div>{t('изображение не загрузилось')}</div>}
+          />
           <Text text={article.createdAt} className={cls.date}/>
         </div>
         <div className={cls.infoWrapper}>
