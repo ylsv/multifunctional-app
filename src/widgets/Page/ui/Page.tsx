@@ -9,14 +9,16 @@ import {useSelector} from 'react-redux'
 import {StateSchema} from '@/app/providers/StoreProvider'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {useThrottle} from '@/shared/lib/hooks/useThrottle/useThrottle'
+import {TestProps} from '@/shared/types/testing'
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string
   children: ReactNode
   onScrollEnd?: () => void
 }
 
-export const Page = ({className, children, onScrollEnd}: PageProps) => {
+export const Page = (props: PageProps) => {
+  const {className, children, onScrollEnd} = props
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
   const dispatch = useAppDispatch()
@@ -47,6 +49,7 @@ export const Page = ({className, children, onScrollEnd}: PageProps) => {
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}

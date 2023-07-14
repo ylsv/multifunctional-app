@@ -8,7 +8,10 @@ const ProfilePage = () => {
   let {id} = useParams<{ id: string }>()
   if (__PROJECT__ === 'storybook') id = '1'
   return (
-    <Page className={classNames('', {}, [])}>
+    <Page
+      className={classNames('', {}, [])}
+      data-testid="ProfilePage"
+    >
       <EditableProfileCard id={id}/>
     </Page>
   )
