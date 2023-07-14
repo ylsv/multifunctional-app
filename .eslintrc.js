@@ -50,6 +50,7 @@ module.exports = {
     "react/display-name": "off", // Checks effect dependencies
     "no-undef": "off",
     "react/jsx-props-no-spreading": "off",
+    'i18next/no-literal-string': 'off',
     "prefer-const": ["error", {
       "destructuring": "any",
       "ignoreReadBeforeAssign": false
