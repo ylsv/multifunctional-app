@@ -3,4 +3,4 @@ node_modules
 .idea
 /storybook-static
 extractedTranslations
-/reports
+/reports/unit
