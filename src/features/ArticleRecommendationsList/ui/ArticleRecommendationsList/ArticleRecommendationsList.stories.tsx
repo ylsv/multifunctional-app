@@ -10,6 +10,9 @@ export default {
   argTypes: {
     backgroundColor: {control: 'color'},
   },
+  parameters: {
+    loki: {skip: true}
+  }
 } as ComponentMeta<typeof ArticleRecommendationsList>
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => <ArticleRecommendationsList {...args} />
@@ -32,7 +35,7 @@ const article: Article = {
 
 Normal.parameters = {
   mockData: [{
-    url: `http://localhost:4003/articles?_limit=3`,
+    url: `${__API__}/articles?_limit=3`,
     method: 'GET',
     status: 200,
     response: [
