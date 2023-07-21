@@ -615,6 +615,15 @@
         "MANAGER"
       ],
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     }
   ],
   "profiles": [
