@@ -16,11 +16,15 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
   const {data: articleRecommendations, isLoading, error} = useGetArticleRecommendationsListQuery(3)
   if (isLoading || error || !articleRecommendations) return null
   return (
-    <VStack gap="8" className={classNames('', {}, [className])}>
+    <VStack
+      gap="8"
+      className={classNames('', {}, [className])}
+    >
       <Text title={t('Рекомендации')} size={TextSize.L}/>
       <ArticleList
         articles={articleRecommendations}
         target="_blank"
+        data-testid="ArticleRecommendationsList"
       />
     </VStack>
   )
