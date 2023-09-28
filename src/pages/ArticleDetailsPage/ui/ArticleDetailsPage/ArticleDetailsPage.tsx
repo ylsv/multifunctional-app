@@ -11,7 +11,8 @@ import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetai
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments'
 import {ArticleRecommendationsList} from '@/features/ArticleRecommendationsList'
 import {ArticleRating} from '@/features/ArticleRating'
-import {getFeatureFlag} from '@/shared/lib/features'
+import {toggleFeatures} from '@/shared/lib/features'
+import {Card} from '@/shared/ui/Card'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -34,14 +35,18 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
     )
   }
 
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id || ''} />,
+    off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+  })
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader/>
         <ArticleDetails id={id}/>
-        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+        {articleRatingCard}
         <ArticleRecommendationsList/>
         <ArticleDetailsComments id={id}/>
       </Page>
