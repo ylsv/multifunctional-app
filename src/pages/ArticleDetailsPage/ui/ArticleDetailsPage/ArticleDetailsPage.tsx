@@ -11,6 +11,7 @@ import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetai
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments'
 import {ArticleRecommendationsList} from '@/features/ArticleRecommendationsList'
 import {ArticleRating} from '@/features/ArticleRating'
+import {getFeatureFlag} from '@/shared/lib/features'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -33,12 +34,14 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
     )
   }
 
+  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader/>
         <ArticleDetails id={id}/>
-        <ArticleRating articleId={id} />
+        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
         <ArticleRecommendationsList/>
         <ArticleDetailsComments id={id}/>
       </Page>

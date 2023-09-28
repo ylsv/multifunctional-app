@@ -585,6 +585,9 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://www.oneeducation.org.uk/wp-content/uploads/2018/08/Admin-Secretarial-and-PA-Diploma-Level-3.jpg"
     },
     {
@@ -594,6 +597,9 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/133/5/133-5-101P/The-Dude-Bruno-Morphet-Poster.jpg"
     },
     {
@@ -603,6 +609,9 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     },
     {
@@ -612,6 +621,9 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     }
   ],
