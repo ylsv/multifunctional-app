@@ -589,6 +589,11 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false
+      },
       "avatar": "https://www.oneeducation.org.uk/wp-content/uploads/2018/08/Admin-Secretarial-and-PA-Diploma-Level-3.jpg"
     },
     {
@@ -601,6 +606,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false
       },
       "avatar": "https://product-image.juniqe-production.juniqe.com/media/catalog/product/seo-cache/x800/133/5/133-5-101P/The-Dude-Bruno-Morphet-Poster.jpg"
     },
@@ -615,6 +625,11 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false
+      },
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     },
     {
@@ -627,6 +642,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false
       },
       "avatar": "https://www.azernews.az/media/pictures/project-manager-multitasking.jpg"
     }

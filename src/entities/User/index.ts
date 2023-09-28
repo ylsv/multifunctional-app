@@ -4,7 +4,8 @@ import {getUserRoles, isUserAdmin, isUserManager} from './model/selectors/roleSe
 import {userActions, userReducer} from './model/slice/userSlice'
 import {User, UserSchema} from './model/types/user'
 import {UserRole} from './model/consts/consts'
-
+import {getJsonSettings, useJsonSettings} from './model/selectors/jsonSettings'
+import {saveJsonSettings} from './model/services/saveJsonSettings'
 
 export {
   userReducer,
@@ -15,6 +16,9 @@ export {
   isUserAdmin,
   isUserManager,
   UserRole,
+  getJsonSettings,
+  useJsonSettings,
+  saveJsonSettings,
 }
 
 export type {
