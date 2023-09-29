@@ -11,7 +11,7 @@ import {ArticlesPageFilters} from '../ArticlesPageFilters/ArticlesPageFilters'
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import {useSearchParams} from 'react-router-dom'
 import {ArticleInfiniteList} from '../ArticleInfiniteList/ArticleInfiniteList'
-import {ArticlePageGreeting} from '@/features/ArticlePageGreeting'
+import {ArticlePageGreeting} from '@/features/articlePageGreeting'
 
 interface ArticlesPageProps {
   className?: string
