@@ -3,16 +3,21 @@ import {classNames} from '@/shared/lib/classNames/classNames'
 import {AppRouter} from './providers/router'
 import {Navbar} from '@/widgets/Navbar'
 import {Sidebar} from '@/widgets/Sidebar'
-import {useDispatch, useSelector} from 'react-redux'
-import {getUserInitialized, userActions} from '@/entities/User'
+import {useSelector} from 'react-redux'
+import {getUserInitialized} from '@/entities/User'
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import {initAuthData} from '@/entities/User'
+import {PageLoader} from '@/widgets/PageLoader'
 
 const App = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const userInitialized = useSelector(getUserInitialized)
 
   useEffect(() => {
-    dispatch(userActions.initAuthData())
+    dispatch(initAuthData())
   }, [dispatch])
+
+  if (!userInitialized) return <PageLoader />
 
   return (
     <div className={classNames('app', {}, [])}>

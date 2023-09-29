@@ -6,6 +6,7 @@ import {User, UserSchema} from './model/types/user'
 import {UserRole} from './model/consts/consts'
 import {getJsonSettings, useJsonSettings} from './model/selectors/jsonSettings'
 import {saveJsonSettings} from './model/services/saveJsonSettings'
+import {initAuthData} from './model/services/initAuthData'
 
 export {
   userReducer,
@@ -19,6 +20,7 @@ export {
   getJsonSettings,
   useJsonSettings,
   saveJsonSettings,
+  initAuthData,
 }
 
 export type {
