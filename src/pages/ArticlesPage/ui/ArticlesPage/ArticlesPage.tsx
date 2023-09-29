@@ -1,6 +1,6 @@
 import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPage.module.scss'
-import {memo, useCallback} from 'react'
+import React, {memo, useCallback} from 'react'
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {articlesPageReducer} from '../../model/slice/articlesPageSlice'
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
@@ -11,6 +11,7 @@ import {ArticlesPageFilters} from '../ArticlesPageFilters/ArticlesPageFilters'
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import {useSearchParams} from 'react-router-dom'
 import {ArticleInfiniteList} from '../ArticleInfiniteList/ArticleInfiniteList'
+import {ArticlePageGreeting} from '@/features/ArticlePageGreeting'
 
 interface ArticlesPageProps {
   className?: string
@@ -42,6 +43,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
       >
         <ArticlesPageFilters />
         <ArticleInfiniteList />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   )
